@@ -11,6 +11,13 @@ interface IHomeProps {
 }
 
 export default function Home({ recommendedProducts }: IHomeProps) {
+  
+  async function handleSum() {
+    const math = (await import('../lib/math')).default; 
+
+    console.log(math.sum(4, 2));
+  }
+
   return (
     <div>
       <Title>Produtos</Title> 
@@ -23,7 +30,9 @@ export default function Home({ recommendedProducts }: IHomeProps) {
             </li>
           )
         })}
-      </ul>   
+      </ul> 
+
+      <button type="button" onClick={handleSum}>Somar</button>  
     </div>
   )
 }
