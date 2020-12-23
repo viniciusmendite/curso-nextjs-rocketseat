@@ -1,5 +1,7 @@
+import {Title} from '../styles/pages/Home'
+
 export default function Home() {
   return (
-    <h1>Hello World vini</h1>    
+    <Title>Hello World vini</Title>    
   )
 }
