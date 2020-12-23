@@ -1,5 +1,6 @@
+import SEO from '@/components/SEO';
 import { GetServerSideProps } from 'next';
-import {Title} from '../styles/pages/Home'
+import {Title} from '../styles/pages/Home';
 
 interface IProduct {
   id: string;
@@ -20,17 +21,24 @@ export default function Home({ recommendedProducts }: IHomeProps) {
 
   return (
     <div>
-      <Title>Produtos</Title> 
+      <SEO 
+      title="DevCommerce, your best e-commerce!" 
+      image="boost.png"
+      shouldExcludeTitleSuffix/>
 
-      <ul>
-        {recommendedProducts.map(recommendedProduct => {
-          return (
-            <li key={recommendedProduct.id}>
-              {recommendedProduct.title}
-            </li>
-          )
-        })}
-      </ul> 
+      <section>
+        <Title>Produtos</Title> 
+
+        <ul>
+          {recommendedProducts.map(recommendedProduct => {
+            return (
+              <li key={recommendedProduct.id}>
+                {recommendedProduct.title}
+              </li>
+            )
+          })}
+        </ul>
+      </section> 
 
       <button type="button" onClick={handleSum}>Somar</button>  
     </div>
