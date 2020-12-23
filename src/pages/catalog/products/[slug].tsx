@@ -3,7 +3,7 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const AddToCartModal = dynamic(
-  () => import('../../../components/AddToCartModal'),
+  () => import('@/components/AddToCartModal'),
   { loading: () => <p>Loading...</p>, ssr: false } // ssr: false, diz que vai ser redenrizado somente no lado do cliente, pq assim conseguimos usar as variaveis globais presentes no browser, como document, window etc
 ) 
 
